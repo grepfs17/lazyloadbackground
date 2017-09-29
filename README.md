@@ -14,5 +14,5 @@ Examples:
 			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
 			data-src="path_to_image">
 ```
-src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
-In HTML img tag needs to be completed thats why we put a little base64 gif.
+src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" .
+We use that because img tag needs to be completed with a src. This is the mos little gif in base64.
