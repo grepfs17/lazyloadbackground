@@ -8,7 +8,7 @@ Examples:
 <div class="bg-lazy" data-src="path_to_image"></div>
 ```
 
--Images:
+- Images:
 ```
 <img class="img-lazy"
 			src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
