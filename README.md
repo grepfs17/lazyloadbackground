@@ -17,4 +17,4 @@ Examples:
 ```
 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" .
 
-We use that because img tag needs to be completed with a src. This is the most little gif in base64.
+We use that because src attribute can't be empty. This is the most little gif in base64.
