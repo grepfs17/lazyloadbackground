@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Testing Lazy Load</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src='lazyloadbg.min.js'></script>
+	<style type="text/css">
+		.bg-lazy{
+			width:100%;
+			height:600px;
+			background-color:#666;
+			background-image: none;
+			background-repeat: no-repeat;
+			background-position: center center;
+			-webkit-background-size: cover;
+    		-moz-background-size: cover;
+    		-o-background-size: cover;
+    		background-size: cover;
+
+    		margin:30px 0px;
+		}
+		footer{
+			text-align: center;
+			height: 80px;
+			background-color: #c6c6c6;
+			padding-top:30px;
+			margin-top:50px;
+		}
+		.row img{
+			padding-bottom:20px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<h1>Test Lazy Load Bg Image</h1>
+		<article>
+			<h2>Lorem Ipsum</h2>
+			<div class="row">
+				<div class="col-lg-4 col-xs-12">
+					<img class="img-lazy img-responsive"
+						 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+						 data-src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-440844.jpg">
+					<img class="img-lazy img-responsive"
+						 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+						 data-src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-557804.png">
+				</div>
+				<div class="col-lg-8 col-xs-12">
+					<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec tellus a libero cursus porta vitae eget orci. Maecenas mattis eget neque id euismod. Nam arcu dui, suscipit in finibus et, bibendum nec augue. Duis at porttitor mauris, quis tincidunt tellus. Vestibulum lacinia augue vel elementum luctus. Sed tempus non ipsum nec scelerisque. Sed eget laoreet elit, a imperdiet neque. Aliquam erat volutpat. Etiam et dictum massa, ut efficitur turpis. Donec magna lacus, faucibus ut diam sit amet, mollis tempor purus. Etiam vel nulla vel neque aliquam porta at et ligula. Maecenas interdum cursus condimentum. Phasellus iaculis aliquam scelerisque. Fusce dictum, ligula eget rhoncus placerat, odio neque iaculis nisi, eu ultricies erat odio vel arcu.</p>
+
+					<p>Donec convallis nunc sit amet blandit feugiat. Aliquam at turpis ut risus consequat consectetur. Nullam congue dapibus suscipit. Fusce mattis ex a quam commodo finibus. Aenean in ultricies odio, sit amet interdum erat. Vestibulum tincidunt, ligula vel maximus euismod, massa leo sagittis turpis, id dictum nunc diam sed risus. Phasellus blandit auctor consequat. Nullam eleifend metus dolor, nec dapibus enim lobortis non. Sed et erat vulputate, mollis justo quis, faucibus magna. Nunc dui mi, sodales eget luctus ut, volutpat in est. Suspendisse ornare nulla vitae ultricies sodales.</p>
+
+					<p>Morbi convallis neque leo, quis imperdiet eros efficitur et. Donec pellentesque magna turpis, pharetra dignissim lorem convallis ut. Pellentesque fermentum sodales elit, ac vulputate urna sagittis nec. Phasellus ipsum purus, lacinia eu sem id, dapibus pretium risus. Vestibulum felis dui, iaculis ultrices sagittis sit amet, finibus vitae massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare tempus venenatis. Sed sed purus at ipsum euismod rutrum sed non odio. Sed porta luctus diam nec commodo. Pellentesque ullamcorper magna nulla, sit amet rutrum tellus luctus id. Maecenas rutrum fringilla vehicula. Quisque finibus tellus in massa elementum commodo. Ut nisl lorem, sagittis vitae turpis ut, convallis placerat tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec orci mi, vulputate et arcu euismod, euismod commodo eros. Sed vitae lectus vel magna vestibulum euismod sit amet sagittis dolor.</p>
+
+					<p>Etiam leo risus, euismod et eros ac, feugiat euismod felis. Maecenas ac maximus nulla, sed mattis turpis. Pellentesque id eros a justo porta fringilla. Sed laoreet, purus eu lacinia posuere, arcu odio faucibus nisi, vel elementum nisl felis nec nibh. Aenean interdum dignissim iaculis. Aenean sit amet libero at justo venenatis viverra. Maecenas eget urna in sem viverra condimentum hendrerit ullamcorper nibh. Nam sed massa venenatis, iaculis magna ut, porttitor velit. Praesent nec ornare velit. Aliquam nec ipsum non felis fringilla fermentum. Aenean magna lacus, posuere et accumsan ac, accumsan id erat. </p>
+				</div>
+			</div>
+			
+		</article>
+		<div class="bg-lazy" data-src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-441504.jpg"></div>
+		<article>
+			<h2>Lorem Ipsum 2</h2>
+			<div class="row">
+				<div class="col-lg-8 col-xs-12">
+					<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec tellus a libero cursus porta vitae eget orci. Maecenas mattis eget neque id euismod. Nam arcu dui, suscipit in finibus et, bibendum nec augue. Duis at porttitor mauris, quis tincidunt tellus. Vestibulum lacinia augue vel elementum luctus. Sed tempus non ipsum nec scelerisque. Sed eget laoreet elit, a imperdiet neque. Aliquam erat volutpat. Etiam et dictum massa, ut efficitur turpis. Donec magna lacus, faucibus ut diam sit amet, mollis tempor purus. Etiam vel nulla vel neque aliquam porta at et ligula. Maecenas interdum cursus condimentum. Phasellus iaculis aliquam scelerisque. Fusce dictum, ligula eget rhoncus placerat, odio neque iaculis nisi, eu ultricies erat odio vel arcu.</p>
+
+					<p>Donec convallis nunc sit amet blandit feugiat. Aliquam at turpis ut risus consequat consectetur. Nullam congue dapibus suscipit. Fusce mattis ex a quam commodo finibus. Aenean in ultricies odio, sit amet interdum erat. Vestibulum tincidunt, ligula vel maximus euismod, massa leo sagittis turpis, id dictum nunc diam sed risus. Phasellus blandit auctor consequat. Nullam eleifend metus dolor, nec dapibus enim lobortis non. Sed et erat vulputate, mollis justo quis, faucibus magna. Nunc dui mi, sodales eget luctus ut, volutpat in est. Suspendisse ornare nulla vitae ultricies sodales.</p>
+
+					<p>Morbi convallis neque leo, quis imperdiet eros efficitur et. Donec pellentesque magna turpis, pharetra dignissim lorem convallis ut. Pellentesque fermentum sodales elit, ac vulputate urna sagittis nec. Phasellus ipsum purus, lacinia eu sem id, dapibus pretium risus. Vestibulum felis dui, iaculis ultrices sagittis sit amet, finibus vitae massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare tempus venenatis. Sed sed purus at ipsum euismod rutrum sed non odio. Sed porta luctus diam nec commodo. Pellentesque ullamcorper magna nulla, sit amet rutrum tellus luctus id. Maecenas rutrum fringilla vehicula. Quisque finibus tellus in massa elementum commodo. Ut nisl lorem, sagittis vitae turpis ut, convallis placerat tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec orci mi, vulputate et arcu euismod, euismod commodo eros. Sed vitae lectus vel magna vestibulum euismod sit amet sagittis dolor.</p>
+
+					<p>Etiam leo risus, euismod et eros ac, feugiat euismod felis. Maecenas ac maximus nulla, sed mattis turpis. Pellentesque id eros a justo porta fringilla. Sed laoreet, purus eu lacinia posuere, arcu odio faucibus nisi, vel elementum nisl felis nec nibh. Aenean interdum dignissim iaculis. Aenean sit amet libero at justo venenatis viverra. Maecenas eget urna in sem viverra condimentum hendrerit ullamcorper nibh. Nam sed massa venenatis, iaculis magna ut, porttitor velit. Praesent nec ornare velit. Aliquam nec ipsum non felis fringilla fermentum. Aenean magna lacus, posuere et accumsan ac, accumsan id erat. </p>
+				</div>
+				<div class="col-lg-4 col-xs-12">
+					<img class="img-lazy img-responsive"
+						 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+						 data-src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-554748.jpg" class="img-responsive">
+					<img class="img-lazy img-responsive"
+						 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+						 data-src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-460786.jpg" class="img-responsive">
+				</div>
+				
+			</div>
+			
+		</article>
+		<div class="bg-lazy" data-src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-563111.jpg"></div>
+		<div class="gallery row">
+			<div class="col-lg-4">
+				<img class="img-lazy img-responsive"
+						 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+						 data-src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20958.jpg" class="img-responsive">
+				<img class="img-lazy img-responsive"
+						 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+						 data-src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-485256.jpg" class="img-responsive">
+			</div>
+			<div class="col-lg-4">
+				<img class="img-lazy img-responsive"
+						 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+						 data-src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-461896.jpg" class="img-responsive">
+				<img class="img-lazy img-responsive"
+						 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+						 data-src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-64346.png" class="img-responsive">
+			</div>
+			<div class="col-lg-4">
+				<img class="img-lazy img-responsive"
+						 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+						 data-src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-450829.jpg" class="img-responsive">
+				<img class="img-lazy img-responsive"
+						 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+						 data-src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-12852.jpg" class="img-responsive">
+			</div>
+		</div>
+	</div>
+	<footer>
+		Test Lazy Load background images - fsanchez
+	</footer>
+</body>
+</html>
