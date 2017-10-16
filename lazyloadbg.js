@@ -4,18 +4,44 @@ Requirements: jQuery 1.12 or +
 Desc: Simple script that loads your images and backgrounds only when they are visible to improve the speed of your site.
 */
 
-function isVisibleOnScreen(elem){
-    var $elem = $(elem);
-    var $window = $(window);
+$.fn.isOnScreen = function(test){
+ 
+    var height = this.outerHeight();
+    var width = this.outerWidth();
 
-    var docViewTop = $window.scrollTop();
-    var docViewBottom = docViewTop + $window.height();
+    if(!width || !height){
+        return false;
+    }
+    
+    var win = $(window);
 
-    var elemTop = $elem.offset().top;
-    var elemBottom = elemTop + 10;
+    var viewport = {
+        top : win.scrollTop(),
+        left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
 
-    return ((elemBottom < docViewBottom) && (elemTop > docViewTop));
-}
+    var bounds = this.offset();
+    bounds.right = bounds.left + width;
+    bounds.bottom = bounds.top + height;
+    
+    var showing = {
+      top : viewport.bottom - bounds.top,
+      left: viewport.right - bounds.left,
+      bottom: bounds.bottom - viewport.top,
+      right: bounds.right - viewport.left
+    };
+
+    if(typeof test == 'function') {
+      return test(showing);
+    }
+
+    return showing.top > 0
+      && showing.left > 0
+      && showing.right > 0
+      && showing.bottom > 0;
+};
 
 function loadBg(elem){
 	background = elem.attr("data-src");
@@ -31,14 +57,14 @@ function loadImg(elem){
 function checkLazy(){
 	if($(".bg-lazy[data-src]").length > 0){
 		$(".bg-lazy[data-src]").each(function(){
-			if ( isVisibleOnScreen($(this)) ){
+			if ( $(this).isOnScreen() ){
 				loadBg($(this));
 			}
 		});
 	}
 	if($("img.img-lazy[data-src]").length > 0){
 		$("img.img-lazy[data-src]").each(function(){
-			if ( isVisibleOnScreen($(this)) ){
+			if ( $(this).isOnScreen() ){
 				loadImg($(this));
 			}
 		});
@@ -52,4 +78,7 @@ $(document).ready(function(){
 	$(window).load(function(){
 		checkLazy();
 	});
+	$(".overflowxx").scroll(function(){
+		checkLazy();
+	})
 });
